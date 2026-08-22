@@ -1,4 +1,4 @@
-<img width="1920" height="966" alt="image" src="https://github.com/user-attachments/assets/f306eb90-9333-445b-a361-8621921d4a19" /># Website Toko Sembako Ibu
+<img width="1920" height="966" alt="image" src="https://github.com/user-attachments/assets/f306eb90-9333-445b-a361-8621921d4a19" /># Website UD.Kariasa
 
 Website profil dan katalog produk sederhana untuk toko sembako lokal. Project ini dibangun menggunakan framework Laravel sebagai bagian dari pemenuhan tugas mata kuliah.
 
