@@ -1,0 +1,128 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source './resources/views/**/*.blade.php';
+
+@theme {
+    --font-sans: 'Poppins', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+
+    --color-brand: #2563eb;
+    --color-brand-dark: #1d4ed8;
+}
+
+/* Animasi latar hero: mesh/aurora bergerak pelan & kontinyu */
+@keyframes aurora-drift {
+    0% {
+        transform: translate3d(0, 0, 0) scale(1);
+    }
+    50% {
+        transform: translate3d(2.5rem, -2rem, 0) scale(1.18);
+    }
+    100% {
+        transform: translate3d(-2rem, 1rem, 0) scale(0.95);
+    }
+}
+
+@keyframes aurora-drift-reverse {
+    0% {
+        transform: translate3d(0, 0, 0) scale(1);
+    }
+    50% {
+        transform: translate3d(-2.5rem, 1.5rem, 0) scale(0.9);
+    }
+    100% {
+        transform: translate3d(1.5rem, -1.5rem, 0) scale(1.15);
+    }
+}
+
+.animate-aurora {
+    will-change: transform;
+    animation: aurora-drift 9s ease-in-out infinite alternate;
+}
+
+.animate-aurora-reverse {
+    will-change: transform;
+    animation: aurora-drift-reverse 12s ease-in-out infinite alternate;
+}
+
+/* Reveal animasi saat scroll/entrance */
+@keyframes fade-up {
+    from {
+        opacity: 0;
+        transform: translateY(24px);
+    }
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+.reveal {
+    opacity: 0;
+}
+
+.reveal.visible {
+    opacity: 1;
+    animation: fade-up 0.7s ease both;
+}
+
+/* Badge mengambang pelan (hero: waktu buka) */
+@keyframes badge-float {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+.animate-badge-float {
+    animation: badge-float 4s ease-in-out infinite;
+}
+
+/* Kartu ulasan melayang (tentang kami) */
+@keyframes card-float-a {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+@keyframes card-float-b {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.animate-float-a {
+    animation: card-float-a 6s ease-in-out infinite;
+}
+
+.animate-float-b {
+    animation: card-float-b 7s ease-in-out infinite;
+}
+
+/* Hormati preferensi pengguna: matikan gerakan halus */
+@media (prefers-reduced-motion: reduce) {
+    .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+
+    .animate-aurora,
+    .animate-aurora-reverse,
+    .animate-badge-float {
+        animation: none;
+    }
+}
