@@ -46,8 +46,15 @@ class AuthController extends Controller
     {
         $productCount = Product::count();
         $totalStock = Product::sum('stock');
+        $zeroStock = Product::where('stock', 0)->count();
+        $categories = Product::distinct()->count('category');
+        $lowStock = Product::where('stock', '<=', 3)->orderBy('stock')->take(5)->get();
+        $recentProducts = Product::latest()->take(5)->get();
 
-        return view('admin.dashboard', compact('productCount', 'totalStock'));
+        return view('admin.dashboard', compact(
+            'productCount', 'totalStock', 'zeroStock', 'categories',
+            'lowStock', 'recentProducts'
+        ));
     }
 
     /**

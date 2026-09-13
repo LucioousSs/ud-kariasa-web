@@ -1,5 +1,7 @@
 @import 'tailwindcss';
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 @source '../../storage/framework/views/*.php';
 @source './resources/views/**/*.blade.php';
@@ -10,6 +12,10 @@
 
     --color-brand: #2563eb;
     --color-brand-dark: #1d4ed8;
+    --color-cream: #faf7f2;
+    --color-warm-50: #fdf8f0;
+    --color-warm-100: #f5ede0;
+    --color-warm-200: #e8ddd0;
 }
 
 /* Animasi latar hero: mesh/aurora bergerak pelan & kontinyu */
@@ -125,4 +131,41 @@
     .animate-badge-float {
         animation: none;
     }
+}
+
+/* Focus-visible: indikator fokus yang jelas untuk keyboard navigation */
+:focus-visible {
+    outline: 2px solid var(--color-brand);
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+
+/* Hapus outline default browser, ganti dengan custom focus */
+:focus:not(:focus-visible) {
+    outline: none;
+}
+
+/* Grain texture overlay — kesan kertas/crafty */
+.bg-grain {
+    position: relative;
+}
+.bg-grain::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    opacity: 0.035;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 200px 200px;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Scroll indicator animasi */
+@keyframes scroll-bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(6px); }
+}
+.animate-scroll-bounce {
+    animation: scroll-bounce 2s ease-in-out infinite;
 }

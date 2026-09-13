@@ -8,9 +8,11 @@ use Illuminate\Support\Facades\Route;
 // Landing page tunggal dengan anchor smooth scroll
 Route::get('/', [PageController::class, 'home'])->name('home');
 
+// Katalog dedicated page
+Route::get('/katalog', [PageController::class, 'catalog'])->name('catalog');
+
 // Redundant redirect menuju section agar path lama tetap ramah
 Route::redirect('/tentang-kami', '/#about')->name('about');
-Route::redirect('/katalog', '/#catalog')->name('catalog');
 Route::redirect('/lokasi', '/#location')->name('location');
 Route::redirect('/kontak', '/#location')->name('contact');
 

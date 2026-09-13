@@ -1,7 +1,7 @@
 <style>[x-cloak]{display:none!important}</style>
 
 <header id="site-header" x-data="{ open: false }"
-    class="fixed inset-x-0 top-0 z-50 overflow-x-hidden border-b border-transparent bg-white/70 backdrop-blur transition">
+    class="fixed inset-x-0 top-0 z-50 overflow-x-hidden border-b border-warm-200 bg-cream/90 backdrop-blur-sm transition">
     <nav class="mx-auto flex h-16 w-full max-w-7xl items-center justify-between px-4 sm:px-6">
         {{-- Logo teks kiri --}}
         <a href="#home" class="flex shrink-0 items-center">
@@ -10,9 +10,9 @@
 
         {{-- Menu navigasi tengah (desktop) --}}
         <div class="absolute left-1/2 hidden -translate-x-1/2 items-center gap-8 text-sm font-medium text-slate-600 md:flex">
-            <a href="#home" class="nav-link transition hover:text-brand">Home</a>
+            <a href="#home" class="nav-link transition hover:text-brand">Beranda</a>
             <a href="#about" class="nav-link transition hover:text-brand">Tentang Kami</a>
-            <a href="#catalog" class="nav-link transition hover:text-brand">Katalog Barang</a>
+            <a href="{{ route('catalog') }}" class="nav-link transition hover:text-brand">Katalog</a>
             <a href="#location" class="nav-link transition hover:text-brand">Lokasi</a>
         </div>
 
@@ -24,12 +24,10 @@
             </a>
 
             <button type="button" @click="open = !open" :aria-expanded="open.toString()" aria-label="Buka menu"
-                class="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-600 transition hover:bg-slate-50 md:hidden">
-                {{-- Ikon garis tiga --}}
+                class="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-warm-200 bg-warm-50 text-slate-600 transition hover:bg-warm-100 md:hidden">
                 <svg x-show="!open" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
-                {{-- Ikon X (saat menu terbuka) --}}
                 <svg x-show="open" x-cloak xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
                 </svg>
@@ -45,12 +43,12 @@
         x-transition:leave="transition ease-in duration-150"
         x-transition:leave-start="translate-y-0 opacity-100"
         x-transition:leave-end="-translate-y-2 opacity-0"
-        class="border-t border-slate-200 bg-white md:hidden">
+        class="border-t border-warm-200 bg-cream md:hidden">
         <div class="flex flex-col gap-1 px-4 py-3 text-sm font-medium text-slate-600">
-            <a href="#home" @click="open = false" class="nav-link rounded-lg px-3 py-2 transition hover:bg-slate-50 hover:text-brand">Home</a>
-            <a href="#about" @click="open = false" class="nav-link rounded-lg px-3 py-2 transition hover:bg-slate-50 hover:text-brand">Tentang Kami</a>
-            <a href="#catalog" @click="open = false" class="nav-link rounded-lg px-3 py-2 transition hover:bg-slate-50 hover:text-brand">Katalog Barang</a>
-            <a href="#location" @click="open = false" class="nav-link rounded-lg px-3 py-2 transition hover:bg-slate-50 hover:text-brand">Lokasi</a>
+            <a href="#home" @click="open = false" class="nav-link rounded-lg px-3 py-2 transition hover:bg-warm-100 hover:text-brand">Beranda</a>
+            <a href="#about" @click="open = false" class="nav-link rounded-lg px-3 py-2 transition hover:bg-warm-100 hover:text-brand">Tentang Kami</a>
+            <a href="{{ route('catalog') }}" @click="open = false" class="nav-link rounded-lg px-3 py-2 transition hover:bg-warm-100 hover:text-brand">Katalog</a>
+            <a href="#location" @click="open = false" class="nav-link rounded-lg px-3 py-2 transition hover:bg-warm-100 hover:text-brand">Lokasi</a>
         </div>
     </div>
 </header>
@@ -63,7 +61,7 @@
         const sections = document.querySelectorAll('section[id]');
 
         function onScroll() {
-            header.classList.toggle('border-slate-200', window.scrollY > 8);
+            header.classList.toggle('shadow-sm', window.scrollY > 8);
         }
         window.addEventListener('scroll', onScroll, { passive: true });
         onScroll();

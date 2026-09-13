@@ -17,4 +17,18 @@ class PageController extends Controller
 
         return view('public.home', compact('products'));
     }
+
+    /**
+     * Halaman katalog dedicated — filter per kategori.
+     */
+    public function catalog(Request $request)
+    {
+        $category = $request->get('category');
+        $categories = Product::distinct()->pluck('category');
+        $products = Product::latest()
+            ->when($category, fn ($q) => $q->where('category', $category))
+            ->get();
+
+        return view('public.catalog', compact('products', 'categories', 'category'));
+    }
 }
