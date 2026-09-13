@@ -5,15 +5,15 @@
 @section('content')
     <div class="w-full max-w-4xl overflow-hidden rounded-2xl border border-warm-200 bg-warm-50 shadow-xl md:grid md:grid-cols-2">
         {{-- Left panel: brand --}}
-        <div class="relative flex flex-col items-center justify-center bg-gradient-to-br from-amber-700 to-amber-900 p-10 text-white md:p-12">
+        <div class="relative flex flex-col items-center justify-center bg-gradient-to-br from-slate-700 to-slate-900 p-10 text-white md:p-12">
             <div class="relative z-10 text-center">
                 <span class="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-white/20 text-2xl font-bold">K</span>
                 <h2 class="mt-5 text-2xl font-bold">UD. KARIASA</h2>
-                <p class="mt-1 text-sm text-amber-100">Sembako Ibu</p>
+                <p class="mt-1 text-sm text-slate-300">Sembako Ibu</p>
                 <div class="mx-auto mt-6 h-px w-16 bg-white/30"></div>
-                <p class="mt-6 text-sm leading-relaxed text-amber-100">Kelola produk, stok, dan informasi toko sembako dari satu tempat yang mudah.</p>
+                <p class="mt-6 text-sm leading-relaxed text-slate-300">Kelola produk, stok, dan informasi toko sembako dari satu tempat yang mudah.</p>
                 <div class="mt-8 rounded-xl bg-white/10 px-5 py-3 backdrop-blur-sm">
-                    <p class="text-xs text-amber-200">Jam Operasional</p>
+                    <p class="text-xs text-slate-300">Jam Operasional</p>
                     <p class="mt-0.5 text-sm font-semibold">Setiap Hari, 08.00 - 21.00</p>
                 </div>
             </div>

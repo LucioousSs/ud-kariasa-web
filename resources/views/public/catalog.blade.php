@@ -4,12 +4,11 @@
 
 @section('content')
     {{-- Hero Katalog --}}
-    <section class="relative overflow-hidden bg-cream py-16">
-        <div class="bg-grain absolute inset-0"></div>
+    <section class="relative overflow-hidden bg-gradient-to-b from-cream to-warm-50 py-16">
         <div class="relative mx-auto max-w-5xl px-4 sm:px-6">
             <div class="text-center">
-                <span class="reveal text-sm font-semibold uppercase tracking-wider text-brand">Katalog Barang</span>
-                <h1 class="reveal mt-4 text-3xl font-bold text-slate-900 sm:text-4xl">Semua produk yang tersedia</h1>
+                <span class="reveal text-xs font-semibold uppercase tracking-wider text-brand">Katalog Barang</span>
+                <h1 class="reveal mt-4 text-3xl font-bold leading-tight text-slate-900 sm:text-4xl">Semua produk yang tersedia</h1>
                 <p class="reveal mx-auto mt-3 max-w-lg text-slate-500">
                     Harga dan stok bisa berubah sewaktu-waktu — tanyakan langsung via WhatsApp.
                 </p>
@@ -18,8 +17,8 @@
     </section>
 
     {{-- Filter + Grid --}}
-    <section class="relative bg-warm-50 py-12">
-        <div class="bg-grain absolute inset-0"></div>
+    <section class="relative overflow-hidden bg-gradient-to-b from-warm-50 via-warm-50 to-cream py-12">
+
         <div class="relative mx-auto max-w-5xl px-4 sm:px-6">
             {{-- Filter bar --}}
             <div class="reveal mb-8 flex flex-wrap items-center gap-2">

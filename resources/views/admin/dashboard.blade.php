@@ -11,7 +11,7 @@
         {{-- Stat Cards --}}
         <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {{-- Total Produk --}}
-            <div class="rounded-2xl border border-warm-200 bg-warm-50 p-5 shadow-sm">
+            <div class="rounded-2xl border border-warm-200 border-l-4 border-l-blue-500 bg-warm-50 p-5 shadow-sm">
                 <div class="flex items-center gap-4">
                     <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-blue-50">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
@@ -19,14 +19,14 @@
                         </svg>
                     </div>
                     <div>
-                        <p class="text-sm font-medium text-slate-500">Total Produk</p>
-                        <p class="text-2xl font-bold text-slate-900">{{ $productCount }}</p>
+                        <p class="text-xs font-semibold uppercase tracking-wider text-slate-500">Total Produk</p>
+                        <p class="text-2xl font-extrabold text-slate-900">{{ $productCount }}</p>
                     </div>
                 </div>
             </div>
 
             {{-- Total Stok --}}
-            <div class="rounded-2xl border border-warm-200 bg-warm-50 p-5 shadow-sm">
+            <div class="rounded-2xl border border-warm-200 border-l-4 border-l-amber-500 bg-warm-50 p-5 shadow-sm">
                 <div class="flex items-center gap-4">
                     <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-amber-50">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
@@ -34,29 +34,37 @@
                         </svg>
                     </div>
                     <div>
-                        <p class="text-sm font-medium text-slate-500">Total Stok</p>
-                        <p class="text-2xl font-bold text-slate-900">{{ number_format($totalStock) }}</p>
+                        <p class="text-xs font-semibold uppercase tracking-wider text-slate-500">Total Stok</p>
+                        <p class="text-2xl font-extrabold text-slate-900">{{ number_format($totalStock) }}</p>
                     </div>
                 </div>
             </div>
 
             {{-- Stok Habis --}}
-            <div class="rounded-2xl border border-warm-200 bg-warm-50 p-5 shadow-sm">
+            <div class="rounded-2xl border border-warm-200 border-l-4 border-l-red-500 bg-warm-50 p-5 shadow-sm">
                 <div class="flex items-center gap-4">
-                    <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-amber-50">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                    <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-red-50">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" />
                         </svg>
                     </div>
                     <div>
-                        <p class="text-sm font-medium text-slate-500">Stok Habis</p>
-                        <p class="text-2xl font-bold {{ $zeroStock > 0 ? 'text-red-600' : 'text-slate-900' }}">{{ $zeroStock }}</p>
+                        <p class="text-xs font-semibold uppercase tracking-wider text-slate-500">Stok Habis</p>
+                        <div class="flex items-center gap-2">
+                            <p class="text-2xl font-extrabold {{ $zeroStock > 0 ? 'text-red-600' : 'text-slate-900' }}">{{ $zeroStock }}</p>
+                            @if ($zeroStock > 0)
+                                <span class="relative flex h-2.5 w-2.5">
+                                    <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-red-400 opacity-75"></span>
+                                    <span class="relative inline-flex h-2.5 w-2.5 rounded-full bg-red-500"></span>
+                                </span>
+                            @endif
+                        </div>
                     </div>
                 </div>
             </div>
 
             {{-- Kategori --}}
-            <div class="rounded-2xl border border-warm-200 bg-warm-50 p-5 shadow-sm">
+            <div class="rounded-2xl border border-warm-200 border-l-4 border-l-blue-400 bg-warm-50 p-5 shadow-sm">
                 <div class="flex items-center gap-4">
                     <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-blue-50">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
@@ -65,8 +73,8 @@
                         </svg>
                     </div>
                     <div>
-                        <p class="text-sm font-medium text-slate-500">Kategori</p>
-                        <p class="text-2xl font-bold text-slate-900">{{ $categories }}</p>
+                        <p class="text-xs font-semibold uppercase tracking-wider text-slate-500">Kategori</p>
+                        <p class="text-2xl font-extrabold text-slate-900">{{ $categories }}</p>
                     </div>
                 </div>
             </div>

@@ -49,14 +49,14 @@
                 </thead>
                 <tbody id="product-table-body" class="divide-y divide-warm-100">
                     @foreach ($products as $product)
-                        <tr class="transition hover:bg-warm-100/50 odd:bg-warm-100/20"
+                        <tr class="transition hover:bg-brand/5 odd:bg-warm-100/20"
                             data-search="{{ strtolower($product->name . ' ' . $product->category) }}">
                             <td class="px-5 py-4">
                                 <div class="flex items-center gap-3">
                                     @if ($product->image)
-                                        <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}" class="h-11 w-11 rounded-xl border border-warm-200 object-cover">
+                                        <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}" class="h-12 w-12 rounded-xl border border-warm-200 object-cover shadow-sm">
                                     @else
-                                        <span class="flex h-11 w-11 items-center justify-center rounded-xl bg-warm-100 text-slate-400">
+                                        <span class="flex h-12 w-12 items-center justify-center rounded-xl bg-warm-100 text-slate-400">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
                                                 <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007z" />
                                             </svg>
@@ -97,13 +97,17 @@
             </table>
         </div>
     @else
-        <div class="mt-6 rounded-2xl border border-dashed border-warm-200 bg-warm-50 p-12 text-center">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mx-auto h-12 w-12 text-slate-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1">
+        <div class="mt-6 rounded-2xl border border-dashed border-warm-200 bg-warm-50 p-16 text-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mx-auto h-16 w-16 text-slate-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M20.25 7.5l-.625 10.632a2.25 2.25 0 01-2.247 2.118H6.622a2.25 2.25 0 01-2.247-2.118L3.75 7.5M10 11.25h4M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z" />
             </svg>
-            <p class="mt-4 text-slate-500">Belum ada produk.</p>
-            <a href="{{ route('admin.products.create') }}" class="mt-3 inline-block text-sm font-semibold text-brand hover:text-brand-dark">
-                Tambah produk pertama sekarang &rarr;
+            <p class="mt-4 text-lg font-medium text-slate-600">Belum ada produk</p>
+            <p class="mt-1 text-sm text-slate-400">Mulai tambahkan produk pertama Anda ke katalog.</p>
+            <a href="{{ route('admin.products.create') }}" class="mt-4 inline-flex items-center gap-2 rounded-xl bg-brand px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-brand/25 transition hover:bg-brand-dark active:scale-95">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
+                </svg>
+                Tambah Produk
             </a>
         </div>
     @endif
@@ -139,10 +143,11 @@
                     </svg>
                 </div>
                 <div>
-                    <h3 id="delete-modal-title" class="text-lg font-semibold text-slate-900">Hapus Produk</h3>
+                    <h3 id="delete-modal-title" class="text-lg font-bold text-slate-900">Hapus Produk</h3>
                     <p class="mt-1 text-sm text-slate-500">
-                        Yakin ingin menghapus <strong x-text="name" class="text-slate-700"></strong>? Tindakan ini tidak dapat dibatalkan.
+                        Yakin ingin menghapus <strong x-text="name" class="text-slate-700"></strong>?
                     </p>
+                    <p class="mt-1 text-xs text-red-500">Semua data produk akan hilang permanen dan tidak dapat dibatalkan.</p>
                 </div>
             </div>
 
@@ -155,7 +160,7 @@
                     @csrf
                     @method('DELETE')
                     <button type="submit"
-                        class="rounded-xl bg-red-600 px-4 py-2.5 text-sm font-semibold text-white shadow-lg shadow-red-600/25 transition hover:bg-red-700 active:scale-95">
+                        class="rounded-xl bg-red-600 px-4 py-2.5 text-sm font-bold text-white shadow-lg shadow-red-600/25 transition hover:bg-red-700 active:scale-95">
                         Ya, Hapus
                     </button>
                 </form>

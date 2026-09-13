@@ -12,14 +12,14 @@
             {{-- Logo --}}
             <div class="flex h-16 items-center justify-center border-b border-warm-100 px-6">
                 <a href="{{ route('home') }}" class="flex items-center gap-2">
-                    <span class="text-lg font-bold tracking-tight text-slate-800">UD.KARIASA</span>
+                    <span class="text-lg font-bold tracking-tight text-slate-800">UD.<span class="text-brand">KARIASA</span></span>
                 </a>
             </div>
 
             {{-- Navigation --}}
             <nav class="flex-1 space-y-1 px-3 py-4">
                 <a href="{{ route('admin.dashboard') }}"
-                    class="flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition {{ request()->routeIs('admin.dashboard') ? 'bg-brand/10 text-brand' : 'text-slate-600 hover:bg-warm-100 hover:text-slate-900' }}">
+                    class="flex items-center gap-3 rounded-lg border-l-[3px] border-brand px-3 py-2.5 text-sm font-medium transition {{ request()->routeIs('admin.dashboard') ? 'border-brand bg-brand/10 text-brand' : 'border-transparent text-slate-600 hover:bg-warm-100 hover:text-slate-900' }}">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
                     </svg>
@@ -27,7 +27,7 @@
                 </a>
 
                 <a href="{{ route('admin.products.index') }}"
-                    class="flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition {{ request()->routeIs('admin.products.*') && !request()->routeIs('admin.products.create') ? 'bg-brand/10 text-brand' : 'text-slate-600 hover:bg-warm-100 hover:text-slate-900' }}">
+                    class="flex items-center gap-3 rounded-lg border-l-[3px] border-brand px-3 py-2.5 text-sm font-medium transition {{ request()->routeIs('admin.products.*') && !request()->routeIs('admin.products.create') ? 'border-brand bg-brand/10 text-brand' : 'border-transparent text-slate-600 hover:bg-warm-100 hover:text-slate-900' }}">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M20.25 7.5l-.625 10.632a2.25 2.25 0 01-2.247 2.118H6.622a2.25 2.25 0 01-2.247-2.118L3.75 7.5M10 11.25h4M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z" />
                     </svg>
@@ -35,7 +35,7 @@
                 </a>
 
                 <a href="{{ route('admin.products.create') }}"
-                    class="flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition {{ request()->routeIs('admin.products.create') ? 'bg-brand/10 text-brand' : 'text-slate-600 hover:bg-warm-100 hover:text-slate-900' }}">
+                    class="flex items-center gap-3 rounded-lg border-l-[3px] border-brand px-3 py-2.5 text-sm font-medium transition {{ request()->routeIs('admin.products.create') ? 'border-brand bg-brand/10 text-brand' : 'border-transparent text-slate-600 hover:bg-warm-100 hover:text-slate-900' }}">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
                     </svg>

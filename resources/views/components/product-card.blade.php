@@ -1,4 +1,4 @@
-<div x-data="{ open: false }" class="group flex h-full flex-col overflow-hidden rounded-2xl border border-warm-200 bg-warm-50 shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lg">
+<div x-data="{ open: false }" class="group flex h-full flex-col overflow-hidden rounded-2xl border border-warm-200 bg-warm-50 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
     <div class="relative h-52 shrink-0 overflow-hidden bg-warm-100">
         @if ($product->image)
             <button type="button" @click="open = true" class="h-full w-full cursor-zoom-in">

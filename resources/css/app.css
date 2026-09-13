@@ -169,3 +169,11 @@
 .animate-scroll-bounce {
     animation: scroll-bounce 2s ease-in-out infinite;
 }
+
+/* =========================================
+   ACCENT LINE — identity motif
+   ========================================= */
+.accent-line {
+    border-left: 4px solid var(--color-brand);
+    padding-left: 1rem;
+}

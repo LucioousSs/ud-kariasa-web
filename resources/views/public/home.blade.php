@@ -7,14 +7,12 @@
     <section id="home" class="relative flex min-h-[100dvh] items-center overflow-hidden">
         {{-- Background foto toko --}}
         <div class="absolute inset-0">
-            {{-- Skeleton --}}
             <div class="absolute inset-0 animate-pulse bg-warm-100"></div>
             <img src="{{ asset('images/Pfp1.jpg') }}" alt="" class="h-full w-full object-cover"
                 onload="this.previousElementSibling.style.display='none'" />
             <div class="absolute inset-0 bg-gradient-to-b from-stone-900/70 via-stone-900/50 to-stone-900/80"></div>
         </div>
 
-        {{-- Grain texture --}}
         <div class="bg-grain absolute inset-0"></div>
 
         {{-- Konten hero --}}
@@ -25,7 +23,7 @@
                     Buka setiap hari
                 </span>
 
-                <h1 class="reveal mt-7 text-4xl font-bold leading-[1.1] tracking-tight text-white sm:text-5xl lg:text-6xl">
+                <h1 class="reveal mt-7 text-4xl font-extrabold leading-[1.05] tracking-tight text-white sm:text-5xl lg:text-6xl">
                     Kebutuhan harian <span class="text-amber-300">lengkap</span>, harga tetap <span class="text-amber-300">bersahabat</span>
                 </h1>
 
@@ -62,16 +60,22 @@
                 <path stroke-linecap="round" stroke-linejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
             </svg>
         </div>
+
+        {{-- Curved divider: Hero → Tentang Kami --}}
+        <div class="absolute bottom-0 left-0 right-0 z-10 -mb-px">
+            <svg viewBox="0 0 1440 120" fill="none" class="w-full text-cream" preserveAspectRatio="none">
+                <path d="M0 120V60c240-80 480-40 720 0s480 80 720 60v60H0z" fill="currentColor"/>
+            </svg>
+        </div>
     </section>
 
     {{-- ===================== TENTANG KAMI — EDITORIAL STORY ===================== --}}
     <section id="about" class="relative overflow-hidden bg-cream py-24">
-        <div class="bg-grain absolute inset-0"></div>
         <div class="relative mx-auto max-w-5xl px-4 sm:px-6">
             <div class="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
                 {{-- Teks cerita --}}
                 <div>
-                    <span class="reveal text-sm font-semibold uppercase tracking-wider text-brand">Tentang Kami</span>
+                    <span class="reveal text-xs font-semibold uppercase tracking-wider text-brand">Tentang Kami</span>
                     <h2 class="reveal mt-4 text-3xl font-bold leading-tight text-slate-900 sm:text-4xl">
                         Toko keluarga yang<br>dekat dengan Anda
                     </h2>
@@ -83,15 +87,15 @@
 
                     <div class="reveal mt-8 grid grid-cols-3 gap-4">
                         <div class="text-center">
-                            <p class="text-2xl font-bold text-brand">50+</p>
+                            <p class="text-3xl font-extrabold text-brand">50+</p>
                             <p class="mt-1 text-xs text-slate-500">Jenis Sembako</p>
                         </div>
                         <div class="text-center">
-                            <p class="text-2xl font-bold text-brand">Tiap Hari</p>
+                            <p class="text-3xl font-extrabold text-brand">Tiap Hari</p>
                             <p class="mt-1 text-xs text-slate-500">Buka Melayani</p>
                         </div>
                         <div class="text-center">
-                            <p class="text-2xl font-bold text-brand">Dekat</p>
+                            <p class="text-3xl font-extrabold text-brand">Dekat</p>
                             <p class="mt-1 text-xs text-slate-500">Dari Rumah Anda</p>
                         </div>
                     </div>
@@ -105,26 +109,37 @@
                             class="relative h-[26rem] w-full object-cover sm:h-[30rem]"
                             onload="this.previousElementSibling.style.display='none'" />
                     </div>
-                    {{-- Decorative accent --}}
                     <div class="absolute -bottom-4 -left-4 h-24 w-24 rounded-2xl bg-amber-200/40"></div>
                     <div class="absolute -right-4 -top-4 h-16 w-16 rounded-full bg-brand/10"></div>
                 </div>
             </div>
         </div>
+
+        {{-- Curved divider: Tentang Kami → Yang Kami Sediakan --}}
+        <div class="absolute bottom-0 left-0 right-0 -mb-px">
+            <svg viewBox="0 0 1440 80" fill="none" class="w-full text-warm-50" preserveAspectRatio="none">
+                <path d="M0 80h1440V40c-240 40-480 0-720-20S240 60 0 40v40z" fill="currentColor"/>
+            </svg>
+        </div>
     </section>
 
     {{-- ===================== YANG KAMI SEDIAKAN ===================== --}}
-    <section class="relative bg-warm-50 py-24">
+    <section class="relative overflow-hidden bg-gradient-to-b from-warm-50 via-warm-50 to-cream py-24">
         <div class="bg-grain absolute inset-0"></div>
+
+        {{-- Decorative blobs --}}
+        <div class="pointer-events-none absolute -top-32 -left-32 h-96 w-96 rounded-full bg-gradient-to-br from-brand/5 to-amber-100/30 blur-3xl"></div>
+        <div class="pointer-events-none absolute -bottom-32 -right-32 h-96 w-96 rounded-full bg-gradient-to-tl from-amber-100/20 to-brand/5 blur-3xl"></div>
+
         <div class="relative mx-auto max-w-5xl px-4 sm:px-6">
             <div class="reveal text-center">
-                <span class="text-sm font-semibold uppercase tracking-wider text-brand">Layanan Kami</span>
-                <h2 class="mt-4 text-3xl font-bold text-slate-900 sm:text-4xl">Yang kami sediakan untuk Anda</h2>
+                <span class="text-xs font-semibold uppercase tracking-wider text-brand">Layanan Kami</span>
+                <h2 class="mt-4 text-3xl font-bold leading-tight text-slate-900 sm:text-4xl">Yang kami sediakan untuk Anda</h2>
             </div>
 
             <div class="reveal mt-12 grid gap-6 sm:grid-cols-3">
                 {{-- Card 1: Stok Segar --}}
-                <div class="rounded-2xl border border-warm-200 bg-cream p-7 shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lg">
+                <div class="rounded-2xl border border-l-4 border-l-brand border-warm-200 bg-gradient-to-br from-blue-50/60 to-cream p-7 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lg">
                     <span class="flex h-14 w-14 items-center justify-center rounded-2xl bg-brand/10 text-brand">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
@@ -136,8 +151,8 @@
                     </p>
                 </div>
 
-                {{-- Card 2: Harga Bersahabat (accent border) --}}
-                <div class="rounded-2xl border border-l-4 border-l-amber-400 border-warm-200 bg-cream p-7 shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lg">
+                {{-- Card 2: Harga Bersahabat --}}
+                <div class="rounded-2xl border border-l-4 border-l-amber-400 border-warm-200 bg-gradient-to-br from-amber-50/60 to-cream p-7 shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lg">
                     <span class="flex h-14 w-14 items-center justify-center rounded-2xl bg-amber-100 text-amber-600">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -150,7 +165,7 @@
                 </div>
 
                 {{-- Card 3: Pesan via WhatsApp --}}
-                <div class="rounded-2xl border border-warm-200 bg-cream p-7 shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lg">
+                <div class="rounded-2xl border border-l-4 border-l-brand border-warm-200 bg-gradient-to-br from-green-50/60 to-cream p-7 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lg">
                     <span class="flex h-14 w-14 items-center justify-center rounded-2xl bg-green-50 text-green-600">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" viewBox="0 0 24 24" fill="currentColor">
                             <path d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2zm5.2 13.9c-.5.5-1.2.7-2.2.5-.5-.1-1.1-.2-1.6-.6a9 9 0 01-2.5-2.6c-.4-.6-.6-1.3-.5-2.2.1-.5.4-1 .8-1.4a.7.7 0 011 0c.2.2.5.7.7.9a.4.4 0 01-.1.6c-.2.2-.3.4-.1.6.5.7 1 1.3 1.6 1.7a11 11 0 002.9 1.2c.3 0 .6.1.7.3l.4.4c.1.2.1.4-.1.6z" />
@@ -163,15 +178,22 @@
                 </div>
             </div>
         </div>
+
+        {{-- Curved divider: Yang Kami Sediakan → Katalog --}}
+        <div class="absolute bottom-0 left-0 right-0 -mb-px">
+            <svg viewBox="0 0 1440 80" fill="none" class="w-full text-cream" preserveAspectRatio="none">
+                <path d="M0 80h1440V50c-240 30-480-10-720-30S240 70 0 50v30z" fill="currentColor"/>
+            </svg>
+        </div>
     </section>
 
     {{-- ===================== KATALOG BARANG ===================== --}}
-    <section id="catalog" class="relative bg-cream py-24">
-        <div class="bg-grain absolute inset-0"></div>
+    <section id="catalog" class="relative overflow-hidden bg-gradient-to-b from-cream via-warm-50/30 to-cream py-24">
+
         <div class="relative mx-auto max-w-5xl px-4 sm:px-6">
             <div class="reveal">
-                <span class="text-sm font-semibold uppercase tracking-wider text-brand">Katalog Barang</span>
-                <h2 class="mt-4 text-3xl font-bold text-slate-900 sm:text-4xl">Sembako yang tersedia</h2>
+                <span class="text-xs font-semibold uppercase tracking-wider text-brand">Katalog Barang</span>
+                <h2 class="mt-4 text-3xl font-bold leading-tight text-slate-900 sm:text-4xl">Sembako yang tersedia</h2>
                 <p class="mt-3 max-w-xl text-slate-500">
                     Harga dan stok bisa berubah sewaktu-waktu — tanyakan langsung via WhatsApp.
                 </p>
@@ -179,7 +201,6 @@
 
             <div x-data="{ expanded: false }">
                 @if ($products->count() > 0)
-                    {{-- 8 produk pertama --}}
                     <div class="mt-10 grid grid-cols-2 gap-4 sm:gap-5 md:grid-cols-3 lg:grid-cols-4">
                         @foreach ($products->take(8) as $index => $product)
                             <div class="reveal h-full" style="animation-delay: {{ min($index, 7) * 80 }}ms">
@@ -189,7 +210,6 @@
                     </div>
 
                     @if ($products->count() > 8)
-                        {{-- Sisa produk --}}
                         <div x-show="expanded" x-cloak
                             x-transition:enter="transition ease-out duration-500"
                             x-transition:enter-start="opacity-0 -translate-y-4"
@@ -224,15 +244,21 @@
                 @endif
             </div>
         </div>
+
     </section>
 
     {{-- ===================== LOKASI & KONTAK — IMMERSIVE ===================== --}}
-    <section id="location" class="relative overflow-hidden bg-cream py-24">
+    <section id="location" class="relative overflow-hidden bg-gradient-to-b from-cream to-warm-100/30 py-24">
         <div class="bg-grain absolute inset-0"></div>
+
+        {{-- Decorative blobs --}}
+        <div class="pointer-events-none absolute -top-24 -left-24 h-72 w-72 rounded-full bg-gradient-to-br from-amber-100/30 to-brand/5 blur-3xl"></div>
+        <div class="pointer-events-none absolute -bottom-24 -right-24 h-72 w-72 rounded-full bg-gradient-to-tl from-green-100/20 to-amber-100/20 blur-3xl"></div>
+
         <div class="relative mx-auto max-w-5xl px-4 sm:px-6">
             <div class="reveal mb-12 text-center">
-                <span class="text-sm font-semibold uppercase tracking-wider text-brand">Lokasi & Kontak</span>
-                <h2 class="mt-4 text-3xl font-bold text-slate-900 sm:text-4xl">Kunjungi atau hubungi kami</h2>
+                <span class="text-xs font-semibold uppercase tracking-wider text-brand">Lokasi & Kontak</span>
+                <h2 class="mt-4 text-3xl font-bold leading-tight text-slate-900 sm:text-4xl">Kunjungi atau hubungi kami</h2>
             </div>
 
             <div class="grid items-stretch gap-10 lg:grid-cols-5">
@@ -252,7 +278,7 @@
 
                 {{-- Info kontak --}}
                 <div class="flex flex-col gap-4 lg:col-span-2">
-                    <div class="reveal rounded-2xl border border-warm-200 bg-warm-50 p-5 shadow-sm">
+                    <div class="reveal rounded-2xl border border-warm-200 bg-warm-50 p-5">
                         <div class="flex items-start gap-4">
                             <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-brand/10 text-brand">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -267,7 +293,7 @@
                         </div>
                     </div>
 
-                    <div class="reveal rounded-2xl border border-warm-200 bg-warm-50 p-5 shadow-sm">
+                    <div class="reveal rounded-2xl border border-warm-200 bg-warm-50 p-5">
                         <div class="flex items-start gap-4">
                             <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-amber-50 text-amber-600">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -282,7 +308,7 @@
                         </div>
                     </div>
 
-                    <div class="reveal rounded-2xl border border-warm-200 bg-warm-50 p-5 shadow-sm">
+                    <div class="reveal rounded-2xl border border-warm-200 bg-warm-50 p-5">
                         <div class="flex items-start gap-4">
                             <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-green-50 text-green-600">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
@@ -321,10 +347,8 @@
     </section>
 
     <script>
-        // Scroll reveal — IntersectionObserver
         document.addEventListener('DOMContentLoaded', function () {
             var revealEls = document.querySelectorAll('.reveal');
-
             if ('IntersectionObserver' in window) {
                 var observer = new IntersectionObserver(function (entries) {
                     entries.forEach(function (entry) {
@@ -334,10 +358,8 @@
                         }
                     });
                 }, { threshold: 0.1, rootMargin: '0px 0px -6% 0px' });
-
                 revealEls.forEach(function (el) {
                     if (el.closest('#home')) {
-                        // Hero elements entrance berurutan
                         el.classList.add('visible');
                     } else {
                         observer.observe(el);
